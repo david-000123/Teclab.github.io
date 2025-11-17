@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <title>JDKit</title>
+  <link rel="icon" href="./public/assets/imagen/Logofavicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./public/assets/css/styles.css">
+  <link rel="stylesheet" href="./public/assets/css/botones.css">
+  <link rel="stylesheet" href="./public/assets/css/spinner.css">
+  <link rel="stylesheet" href="./public/assets/css/media.css">
+  <link rel="stylesheet" href="./public/assets/css/mediascreen">
+</head>
+
+<body>
+  <div class="loader" id="lading">
+    <div class="loading-text">
+      Loading<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+    </div>
+    <div class="loading-bar-background">
+      <div class="loading-bar">
+        <div class="white-bars-container">
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="content-spinner" style="display:none;">
+    <header id="header">
+      <!-- Navigation -->
+      <nav class="nav">
+        <div class="logo">
+          <img src="./public/assets/imagen/logo-removebg-preview.png" alt="logo JDKit">
+        </div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-menu" id="nav-hamburger">
+          <li><a href="#section-one">Inicio</a></li>
+          <li><a href="#section-two">Servicios</a></li>
+          <li><a href="#section-three">Cultura</a></li>
+          <li><a href="#work">Trabajo</a></li>
+          <li class="none"><button id="btn-es" class="lang-btn" data-lang="ES" translate="no">ES</button></li>
+          <li class="none"><button id="btn-en" class="lang-btn inactive" data-lang="EN" translate="no">EN</button></li>
+          <li class="none"><a href="#contactForm" class="hero-cta contacto btn-none"> Iniciar un proyecto</a></li>
+        </ul>
+        <div class="nav-right">
+          <div class="lang-selector">
+            <button id="btn-es" class="lang-btn" data-lang="ES" translate="no">ES</button>
+            <button id="btn-en" class="lang-btn inactive" data-lang="EN" translate="no">EN</button>
+          </div>
+          <a href="#form" class="hero-cta contacto">
+            Iniciar un proyecto
+          </a>
+        </div>
+      </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="container" id="section-one">
+      <div class="hero">
+        <div class="hero-shape">
+          <model-viewer id="colorViewer" alt="Escena orbe en 3D con iluminación azul neón"
+            src="/public/assets/modelo-3D/ethereal_orb.glb" shadow-intensity="1" camera-controls touch-action="pan-y"
+            autoplay animation-name="Running" loading=" eager " class="model-hidden">
+          </model-viewer>
+        </div>
+
+        <div class="hero-content">
+          <div class="hero-subtitle"><span>UX/UI y desarrollo</span></div>
+
+          <h1 class="hero-title">
+            <span class="line1">Diseñamos</span>
+            <span class="line2">soluciones digitales</span>
+          </h1>
+
+          <div class="hero-description">
+            <p class="hero-description-p">
+              Desarrollamos soluciones digitales innovadoras que impulsan el crecimiento de las empresas y conectan con
+              sus clientes.
+              Somos el aliado confiable que convierte ideas en realidades tecnológicas.
+            </p>
+          </div>
+
+          <a href="#" class="hero-cta contacto">
+            Iniciar un proyecto
+          </a>
+        </div>
+      </div>
+    </section>
+    <main>
+      <section class="main services-grid" id="section-two">
+        <div class="service-card-main">
+          <div class="service-card">
+          <div class="service-icon">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="40" cy="40" rx="18" ry="25" stroke="#000" stroke-width="1.5" transform="rotate(-15 40 40)" />
+              <ellipse cx="40" cy="40" rx="12" ry="18" stroke="#000" stroke-width="1.5" transform="rotate(20 40 40)" />
+              <ellipse cx="40" cy="40" rx="6" ry="10" stroke="#000" stroke-width="1.5" transform="rotate(-5 40 40)" />
+            </svg>
+          </div>
+          <div class="service-content">
+            <a href="">
+              <h3>Servicios de marca</h3>
+              <p>Conocimiento de usuario y marca</p>
+              <p>Contenido funcional y estratégico</p>
+              <p>Iteración guiada por datos</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <img src="./public/assets/imagen/svg/monitor-tv-svgrepo-com.svg" alt="Web a medida SVG" width="80"
+              height="80">
+          </div>
+          <div class="service-content">
+            <a href="">
+              <h3>Web a medida</h3>
+              <p>Código limpio y escalable</p>
+              <p>Interfaces responsivas y accesibles</p>
+              <p>Optimización y rendimiento web</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="25" y1="35" x2="45" y2="35" stroke="#000" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="25" y1="42" x2="50" y2="42" stroke="#000" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="25" y1="49" x2="42" y2="49" stroke="#000" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="25" y1="56" x2="48" y2="56" stroke="#000" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="service-content">
+            <a href="">
+              <h3>Desarrollo back-end</h3>
+              <p>Arquitectura robusta y escalable</p>
+              <p>Gestión eficiente de datos</p>
+              <p>Seguridad y rendimiento óptimo</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <img src="./public/assets/imagen/svg/edit-svgrepo-com.svg" alt="Estrategia Digital SVG" width="80"
+              height="80">
+          </div>
+          <div class="service-content">
+            <a href="">
+              <h3>Consultoría Digital</h3>
+              <p>Análisis y diagnóstico digital</p>
+              <p>Estrategia y canalización</p>
+              <p>Monitoreo y mejora continua</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25 45L40 30L55 45L40 60L25 45Z" stroke="#000" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M32 45L40 37L48 45" stroke="#000" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="service-content">
+            <a href="">
+              <h3>Diseño de movimiento</h3>
+              <p>Guionismo</p>
+              <p>Diseño gráfico</p>
+              <p>Composición y animaciones</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M35 25V60" stroke="#000" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M28 32H42C45 32 47 34 47 37C47 40 45 42 42 42H28" stroke="#000" stroke-width="1.5"
+                stroke-linecap="round" />
+              <line x1="28" y1="60" x2="42" y2="60" stroke="#000" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="service-content">
+            <a href="">
+              <h3>Tipografía</h3>
+              <p>Creación</p>
+              <p>Personalización</p>
+              <p>Letras</p>
+            </a>
+          </div>
+        </div></div>
+        </section>
+      <section class="main" id="section-three">
+        <div class="culture-hero">
+          <div class="culture-container">
+            <h2 class="culture-main-title">
+              <span class="culture-title-solid">SOBRE</span>
+              <span class="culture-title-outline">NOSOTROS</span>
+            </h2>
+            <p class="culture-subtitle">HOLA DESDE BUENOS AIRES</p>
+          </div>
+        </div>
+        <div class="culture-about-content">
+          <div class="culture-container">
+            <div class="culture-content-grid">
+              <div class="culture-text-column">
+                <h3 class="culture-section-heading">Quiénes somos y qué hacemos</h3>
+                <p class="culture-description">
+                  Somos una agencia digital que fusiona tecnología, creatividad y estrategia para ofrecer soluciones a
+                  medida.
+                  Nos especializamos en crear experiencias digitales que se adaptan perfectamente a las necesidades de
+                  tu marca y negocio.
+                  Desde el desarrollo de sitios web y tiendas online hasta la automatización de procesos y la creación
+                  de productos digitales personalizados,
+                  nuestra misión es simplificar tu día a día, mejorar la experiencia de tus clientes y potenciar tu
+                  presencia digital.
+                  Juntos, descubrimos nuevas oportunidades y diseñamos estrategias para llevar tu crecimiento digital al
+                  siguiente nivel.
+                </p>
+              </div>
+              <div class="culture-cards-column">
+                <div class="image-container">
+                  <div class="photo-frame image-piece top-left" id="image-piece-1"></div>
+                  <div class="photo-frame image-piece top-right" id="image-piece-2"></div>
+                  <div class="photo-frame image-piece bottom-left" id="image-piece-3"></div>
+                  <div class="photo-frame image-piece bottom-right" id="image-piece-4">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SECCIÓN PRINCIPAL -->
+        <div class="main-section">
+          <div class="texto-principal">
+            <p class="texto-principal-p">
+              La visión estratégica no es solo nuestro punto de partida: es la forma en que concebimos y ejecutamos cada
+              proyecto.
+              Para nosotros, la tecnología no es un fin, sino un medio para construir marcas potentes, relevantes y
+              memorables.
+              A través del branding, el desarrollo web y soluciones digitales innovadoras, ayudamos a las marcas a
+              expresar su identidad, conectar con sus audiencias y evolucionar con agilidad en mercados cada vez más
+              dinámicos.
+              La creatividad impulsa lo que hacemos. La estrategia le da dirección. Y la tecnología lo hace posible.
+            </p>
+          </div>
+
+          <!-- Autor o firma -->
+          <div class="autor">
+            <div class="foto-perfil"> <img src="./public/assets/imagen/fotodeperfil.jpg" alt="foto perfil"></div>
+            <p class="nombre">KACZ JORGE DAVID, FUNDADOR</p>
+          </div>
+        </div>
+      </section>
+      <section class="main" id="work">
+        <div class="container-clock">
+          <div class="container-clock-header">
+            <div class="title-work">
+              <h2 class="title-work-h2">TRABAJA CON NOSOTROS</h2>
+            </div>
+          </div>
+          <div class="work-hero">
+            <div class="decorative-circle-small-main-circle">
+              <div class="main-circle">
+                <p class="work-hero-text"><type-async id="type-text"></type-async><span class="blinking-cursor"></span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="work-vertical-text-left"><span>INSPIRACIÓN</span></div>
+          <div class="work-vertical-text-right"><span>IMAGINACIÓN</span></div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" id="form">
+      <!-- Decorative shapes -->
+    <div class="footer-shape-left"></div>
+    <div class="footer-shape-right"></div>
+        <!-- Breadcrumb -->
+        <div class="footer-breadcrumb">
+            <a class="inicio-section-one" href="#section-one">INICIO</a> > <a class="servicio-section-two" href="#section-two"class="current">SERVICIO</a>
+        </div>
+        <!-- Main content -->
+        <div class="footer-content">
+            <!-- Left column -->
+            <div class="footer-left-column">
+                <h2><span class="left-h2-span">Estamos</span> <span class="center-h2-span">disponibles para</span> <span class="right-h2-span">resolver tus dudas.</span></h2>
+                
+                <div class="footer-contact-info">
+                    <div class="footer-contact-section">
+                        <h3 class="footer_contact_section">Redes sociales:</h3>
+<ul class="socail-media">
+  <li>
+    <a href="#">
+       <svg viewBox="0 0 10.712 20" height="20" width="10.712" xmlns="http://www.w3.org/2000/svg">
+  <path transform="translate(-22.89)" d="M32.9,11.25l.555-3.62H29.982V5.282a1.81,1.81,0,0,1,2.041-1.955H33.6V.245A19.255,19.255,0,0,0,30.8,0c-2.86,0-4.73,1.734-4.73,4.872V7.63H22.89v3.62h3.179V20h3.913V11.25Z" id="facebook"></path>
+</svg>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+            <svg viewBox="0 0 20 20" height="20" width="20" xmlns="http://www.w3.org/2000/svg" id="instagram">
+          <g transform="translate(15.354 3.707)" data-name="Group 64" id="Group_64">
+            <g data-name="Group 63" id="Group_63">
+              <path fill="#00" transform="translate(-392.401 -94.739)" d="M392.871,94.739a.47.47,0,1,0,.47.47A.47.47,0,0,0,392.871,94.739Z" data-name="Path 5" id="Path_5"></path>
+            </g>
+          </g>
+          <g transform="translate(5.837 5.837)" data-name="Group 66" id="Group_66">
+            <g data-name="Group 65" id="Group_65">
+              <path fill="#000" transform="translate(-145.804 -145.804)" d="M149.967,145.8a4.163,4.163,0,1,0,4.163,4.163A4.168,4.168,0,0,0,149.967,145.8Z" data-name="Path 6" id="Path_6"></path>
+            </g>
+          </g>
+          <g data-name="Group 68" id="Group_68">
+            <g data-name="Group 67" id="Group_67">
+              <path fill="#000" d="M14.517,0H5.483A5.489,5.489,0,0,0,0,5.483v9.035A5.489,5.489,0,0,0,5.483,20h9.035A5.489,5.489,0,0,0,20,14.517V5.483A5.489,5.489,0,0,0,14.517,0ZM10,15.486A5.486,5.486,0,1,1,15.486,10,5.492,5.492,0,0,1,10,15.486Zm5.814-9.633A1.667,1.667,0,1,1,17.48,4.186,1.669,1.669,0,0,1,15.814,5.853Z" data-name="Path 7" id="Path_7"></path>
+            </g>
+          </g>
+        </svg>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <svg viewBox="0 0 20 20" height="20" width="20" xmlns="http://www.w3.org/2000/svg" id="_x31_0.Linkedin">
+  <path fill="#000" transform="translate(-31.438 -29.201)" d="M51.438,49.2V41.755c0-3.659-.788-6.455-5.057-6.455a4.413,4.413,0,0,0-3.99,2.186h-.051V35.63H38.3V49.2h4.219V42.466c0-1.779.33-3.482,2.516-3.482,2.16,0,2.186,2.008,2.186,3.583v6.607h4.219Z" data-name="Path 1" id="Path_1"></path>
+  <path fill="#000" transform="translate(-10.97 -30.17)" d="M11.3,36.6h4.219V50.17H11.3Z" data-name="Path 2" id="Path_2"></path>
+  <path fill="#000" transform="translate(-10 -10)" d="M12.44,10a2.452,2.452,0,1,0,2.44,2.44A2.44,2.44,0,0,0,12.44,10Z" data-name="Path 3" id="Path_3"></path>
+</svg>
+  </a>
+  </li>
+  <li>
+    <a href="#">
+       <svg viewBox="0 0 23.06 18" height="18" width="23.06" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#000" transform="translate(0 -48.082)" d="M20.69,52.568c.015.2.015.394.015.591A13.085,13.085,0,0,1,7.258,66.082,13.752,13.752,0,0,1,0,64.043a10.168,10.168,0,0,0,1.141.056,9.712,9.712,0,0,0,5.868-1.941,4.715,4.715,0,0,1-4.419-3.15,6.2,6.2,0,0,0,.893.07,5.189,5.189,0,0,0,1.244-.155,4.592,4.592,0,0,1-3.79-4.458V54.41a4.907,4.907,0,0,0,2.136.577A4.5,4.5,0,0,1,.966,51.2a4.375,4.375,0,0,1,.644-2.292,13.621,13.621,0,0,0,9.745,4.753,4.936,4.936,0,0,1-.117-1.041,4.635,4.635,0,0,1,4.726-4.542,4.806,4.806,0,0,1,3.453,1.434,9.538,9.538,0,0,0,3-1.1,4.567,4.567,0,0,1-2.078,2.5,9.779,9.779,0,0,0,2.722-.7A9.953,9.953,0,0,1,20.69,52.568Z" id="twitter"></path>
+      </svg>
+      </a>
+  </li>
+</ul>
+                    </div>
+                    <div class="footer-contact-section">
+                        <h3 class="escríbenos_aquí">Escríbenos aquí:</h3>
+                        <p>jdkits048@gmail.com</p>
+                    </div>
+                    <div class="footer-contact-section">
+                        <h3 class="wasaap">Consultas directas Whatsapp:</h3>
+                         <div id="wa-me"><span><a href="https://wa.me/5491168708414?text=¡Hola!%20Me%20gustaría%20recibir%20más%20información%20sobre%20sus%20servicios."><svg width="44px" height="44px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Whatsapp-color</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Color-" transform="translate(-700.000000, -360.000000)" fill="#67C15E"> <path d="M723.993033,360 C710.762252,360 700,370.765287 700,383.999801 C700,389.248451 701.692661,394.116025 704.570026,398.066947 L701.579605,406.983798 L710.804449,404.035539 C714.598605,406.546975 719.126434,408 724.006967,408 C737.237748,408 748,397.234315 748,384.000199 C748,370.765685 737.237748,360.000398 724.006967,360.000398 L723.993033,360.000398 L723.993033,360 Z M717.29285,372.190836 C716.827488,371.07628 716.474784,371.034071 715.769774,371.005401 C715.529728,370.991464 715.262214,370.977527 714.96564,370.977527 C714.04845,370.977527 713.089462,371.245514 712.511043,371.838033 C711.806033,372.557577 710.056843,374.23638 710.056843,377.679202 C710.056843,381.122023 712.567571,384.451756 712.905944,384.917648 C713.258648,385.382743 717.800808,392.55031 724.853297,395.471492 C730.368379,397.757149 732.00491,397.545307 733.260074,397.27732 C735.093658,396.882308 737.393002,395.527239 737.971421,393.891043 C738.54984,392.25405 738.54984,390.857171 738.380255,390.560912 C738.211068,390.264652 737.745308,390.095816 737.040298,389.742615 C736.335288,389.389811 732.90737,387.696673 732.25849,387.470894 C731.623543,387.231179 731.017259,387.315995 730.537963,387.99333 C729.860819,388.938653 729.198006,389.89831 728.661785,390.476494 C728.238619,390.928051 727.547144,390.984595 726.969123,390.744481 C726.193254,390.420348 724.021298,389.657798 721.340985,387.273388 C719.267356,385.42535 717.856938,383.125756 717.448104,382.434484 C717.038871,381.729275 717.405907,381.319529 717.729948,380.938852 C718.082653,380.501232 718.421026,380.191036 718.77373,379.781688 C719.126434,379.372738 719.323884,379.160897 719.549599,378.681068 C719.789645,378.215575 719.62006,377.735746 719.450874,377.382942 C719.281687,377.030139 717.871269,373.587317 717.29285,372.190836 Z" id="Whatsapp"> </path> </g> </g> </g></svg></a></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right column - Form -->
+           <div class="footer-right-column">
+  <h2 class="footer-form-title">¿Estás preparado para iniciar tu proyecto?</h2>
+
+  <form id="contactForm" action="https://api.web3forms.com/submit"  method="POST" novalidate>
+
+    <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUI">
+    <input type="hidden" name="subject" value="Consulta recibida - JDKIT">
+
+    <input type="hidden" name="autoresponse" value="Hola, gracias por comunicarte con JDKIT. 
+    Hemos recibido tu consulta correctamente y uno de nuestros especialistas se pondrá en contacto contigo a la brevedad. 
+    Si necesitas agregar información adicional, simplemente responde a este correo. 
+    Gracias por confiar en JDKIT.">
+
+
+    <div class="footer-form-group group">
+      <input type="text" id="name" name="name" class="main-input">
+      <label for="name" class="lebal-email Name">Nombre <span class="required">*</span></label>
+      <span class="error-message"></span>
+    </div>
+
+    <div class="footer-form-row">
+      <div class="footer-form-group group">
+        <input type="email" id="email" name="email" class="main-input">
+        <label for="email" class="lebal-email">Email <span class="required">*</span></label>
+        <span class="error-message"></span>
+      </div>
+
+      <div class="footer-form-group group">
+        <input type="tel" id="phone" name="phone" class="main-input">
+        <label for="phone" class="lebal-phone Phone">Teléfono <span class="required">*</span></label>
+        <span class="error-message"></span>
+      </div>
+    </div>
+
+    <div class="footer-form-group group">
+      <input type="text" id="servicio" name="servicio" class="main-input">
+      <label for="servicio" class="lebal-email serviss">Tipo de servicio o profesión requerido <span class="required">*</span></label>
+      <span class="error-message"></span>
+    </div>
+
+   <!-- MODAL DE CONFIRMACIÓN -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Formulario enviado correctamente</h2>
+      <p>Gracias por contactarnos. Te responderemos pronto.</p>
+    </div>
+  </div>
+
+  <!-- MODAL LEGAL -->
+<div id="modalLegal" class="modal">
+  <div class="modal-content" id="modal-text">
+  </div>
+  <span class="close">&times;</span>
+</div>
+
+    <button type="submit" class="footer-submit-btn enviar_mensaje">Enviar mensaje</button>
+    </div>
+    </form>
+</div>
+        
+    </footer>
+  <script src="./public/assets/javascript/spinner.js" defer></script>
+  <script src="./public/assets/javascript/condition.js" defer></script>
+   <script src="./public/assets/javascript/validacion.js" defer></script>
+  <script src="./public/assets/javascript/botones.js" defer></script>
+  <script src="./public/assets/javascript/hamburger.js" defer></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  </div>
+</body>
+
+</html>

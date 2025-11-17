@@ -1,0 +1,513 @@
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+   header #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* alto fijo */
+    background: rgba(0,0,0,0.7); /* opcional, para contraste */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1200;
+  }
+  .logo {
+    position: relative; /* vuelve al flujo del flex */
+    z-index: 1201;
+    pointer-events: none;
+  }
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    border: none;
+    border-radius: 0%;
+    background: linear-gradient(90deg,rgba(33, 33, 33, 0.5) 0%, rgba(17, 41, 18, 0.5) 50%, rgba(33, 33, 33, 0.5) 100%);
+    backdrop-filter: blur(4px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 1100;
+  }
+  
+   .nav-menu li a {
+    font-size: 2rem;
+    font-weight: 400;
+    color:var(--nav-menu-li-a);
+  }
+   .nav-menu li:hover {
+    transform:var(--nav-menu-li-hover);
+    box-shadow: none;
+  }
+   .nav-menu a:hover {
+    background: var(--nav-menu-a-hover);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+   .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1201;
+  }
+   .hamburger span {
+    background: var(--hamburger-span);
+  }
+   .nav-menu.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+   .nav-right {
+    display: none;
+  }
+   .hero-subtitle{
+   font-size: 1rem;
+  }
+ /* --- BLOQUEO DE SCROLL --- */
+   body.no-scroll {
+  overflow: hidden;
+  }
+   .container{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: -20px;
+  }
+  .hero-subtitle{
+    font-size: 24px;
+  }
+  .hero-description p{
+    font-size: 24px;
+  }
+  .hero-shape{
+  width: 45vw;
+  height: 45vh;
+  margin-top: -50px;
+  }
+  .service-card {
+    min-width: 340px; /* Las tarjetas ocupan el 100% del ancho */
+    flex-direction: column; /* Cambiar la dirección de la tarjeta a vertical */
+    align-items: center; /* Centrar todo dentro de la tarjeta */
+  }
+
+  .service-icon {
+    margin-top: 40px; /* Quitar margen superior para que quede justo en la parte superior */
+    margin-bottom: 20px; /* Un poco de espacio debajo del icono */
+  }
+
+  .service-content {
+    text-align: center; /* Centrar el texto dentro de la tarjeta */
+    width: 100%; /* Asegura que el contenido cubra el ancho completo */
+    padding: 20px; /* Espaciado interno */
+  }
+
+  .service-content h3, .service-content p {
+    margin-left: 0; /* Eliminar el margen izquierdo */
+    margin-right: 0; /* Eliminar el margen derecho */
+  }
+
+  .culture-content-grid{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+   .services-grid{
+     width: 100%;
+     height: auto;
+   }
+  .service-card-main{
+    width: 100%;
+    gap: 40px 120px;
+    margin-top: 30PX;
+  }
+
+  .none{
+    display: block;
+  }
+
+  ul li .btn-none{
+   font-size: 17px;
+   text-align: center;
+  
+  }
+
+  .culture-container{
+    width: 100vw;
+  }
+
+  .culture-container h2{
+    margin-left: -1.5rem;
+    font-size: 3rem;
+
+  }
+
+  .culture-main-title {
+  font-size: clamp(60px, 6vw, 160px);
+  
+  }
+
+  .culture-text-column {
+   padding-right: 0;
+}
+
+  .culture-text-column h3{
+  font-size: 28px;
+  margin-top: -50px;
+  text-align: center;
+  }
+
+  .culture-text-column p{
+   font-size: clamp(60px, 6vw, 160px);
+   font-size: 1rem;
+   text-align: center;
+  }
+
+  .image-container {
+  position: relative;
+  width: 320px;
+  height: 440px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+/* Estilos comunes para cada pieza de imagen */
+.image-piece {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-size: 160px 221px;
+  transition: all 0.6s ease-in-out;
+  object-fit: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.culture-cards-column{ 
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.culture-text-column p{
+  font-size: 24px;
+}
+  .main-section {
+    padding: 60px 8%;
+  }
+
+  .container-clock-header {
+    flex-direction: column;
+    padding: 1rem 2rem;
+  }
+
+  /* Centramos el título y lo hacemos más pequeño */
+  .title-work {
+    position: static;
+    transform: none;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+
+  .title-work-h2 {
+    font-size: 2.5rem;
+    text-align: center;
+     margin-top: 30PX;
+  }
+
+  /* Círculo principal redimensionado */
+  .main-circle {
+    width: 300px;
+    height: 300px;
+    padding: 2rem;
+    background-size: cover;
+  }
+
+  .work-hero-text {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  /* Texto vertical se oculta o se mueve */
+  .work-vertical-text-left,
+  .work-vertical-text-right {
+    display: none;
+  }
+
+  /* Ajuste del hero container */
+  .work-hero {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .decorative-circle-small-main-circle {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+ .footer {
+        max-width: 100vw;
+        padding: 20px 10px;
+        overflow-x: hidden;
+    }
+  .footer-shape-right {
+           display: none;
+        }
+        .footer-shape-left {
+           display: none;
+        }
+
+    .footer-breadcrumb {
+        font-size: 15px;
+        margin-bottom: 40px;
+        text-align: left; 
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* una sola columna */
+        gap: 40px;
+        margin-top: 20px;
+    }
+
+    .footer-left-column h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+        line-height: 1.2;
+        text-align: center; 
+    }
+
+    .footer-contact-section h3{
+      text-align: center; 
+    }
+     .footer-form-row {
+        grid-template-columns: 1fr; /* inputs full width */
+    }
+
+    .footer-contact-info {
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;    /* Centra horizontalmente */
+    }
+
+    .footer-left-column{
+        display: flex;
+        flex-direction: column;
+        align-items: center;   
+    }
+
+    .footer-right-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;    /* Centra horizontalmente */
+    }
+
+    .footer-form-title {
+        font-size: 26px;
+        margin-bottom: 25px;
+        text-align: center; 
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    .main-input {
+        font-size: 16px;
+        padding: 10px 0;
+    }
+
+    .socail-media {
+        gap: 15px;
+    }
+
+    .socail-media li a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .socail-media li a svg {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+    }
+    
+    /* Form labels floating fix */
+    .lebal-email, .lebal-phone {
+        font-size: 14px;
+    }
+    .footer-shape-left,
+    .footer-shape-right {
+        opacity: 0.3;
+        transform: scale(0.7);
+    }
+   #wa-me {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* útil si quieres centrar verticalmente */
+}
+
+  #wa-me span, 
+   #wa-me a {
+  display: flex; /* fuerza al contenido interno a comportarse como caja centrada */
+  margin-top: 10px;
+}
+
+#contactForm{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+}
+ 
+
+ @media screen and (min-width: 993px) and (max-width: 1400px){
+   header #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* alto fijo */
+    background: rgba(0,0,0,0.7); /* opcional, para contraste */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1200;
+  }
+  .logo {
+    position: relative; /* vuelve al flujo del flex */
+    z-index: 1201;
+    pointer-events: none;
+  }
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 40vw;
+    border: none;
+    border-radius: 0%;
+    background: linear-gradient(90deg,rgba(33, 33, 33, 0.5) 0%, rgba(17, 41, 18, 0.5) 50%, rgba(33, 33, 33, 0.5) 100%);
+    backdrop-filter: blur(4px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 1100;
+  }
+   .nav-menu li a {
+    font-size: 2rem;
+    font-weight: 400;
+    color:var(--nav-menu-li-a);
+  }
+   .nav-menu li:hover {
+    transform:var(--nav-menu-li-hover);
+    box-shadow: none;
+  }
+   .nav-menu a:hover {
+    background: var(--nav-menu-a-hover);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+   .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1201;
+    margin-left: 80px;
+    width: 50px;
+    height: 40px;
+  }
+   .hamburger span {
+    background: var(--hamburger-span);
+  }
+   .nav-menu.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+   
+   .hero-subtitle{
+   font-size: 1rem;
+  }
+ /* --- BLOQUEO DE SCROLL --- */
+   body.no-scroll {
+  overflow: hidden;
+  }
+   .container{
+    width: 100vw;
+    height: auto;
+  }
+  .hero-description{
+    font-size: 1rem;
+  }
+  .hero-shape{
+  width: 55vw;
+  height: 55vh;
+  margin-left: -35%;
+  }
+   /* Header */
+  .container-clock-header {
+    padding: 1.5rem 3rem;
+  }
+
+  /* Título principal */
+  .title-work {
+    margin-top: 150px;
+  }
+
+  .title-work-h2 {
+    font-size: 2.5rem; 
+  }
+
+  /* Hero - círculo */
+  .main-circle {
+    width: 500px;   /* antes 700px */
+    height: 500px;
+    padding: 3rem;
+    background-size: contain;
+  }
+
+  .work-hero-text {
+    font-size: 2rem; /* antes 2.5rem */
+  }
+
+  type-async,
+  .blinking-cursor {
+    font-size: 1.5em; /* reducir levemente */
+  }
+
+  /* Texto vertical */
+  .work-vertical-text-left,
+  .work-vertical-text-right {
+    font-size: 1.2rem; /* antes 1.5rem */
+    letter-spacing: 0.2em;
+  }
+  .hero-content{
+ margin-top: 2.5rem;
+}
+}
