@@ -1,111 +1,110 @@
+
 document.addEventListener('DOMContentLoaded', () => {
+
   const form = document.getElementById('contactForm');
   const inputs = form.querySelectorAll('.main-input');
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const phoneRegex = /^[0-9+\-\s]*$/;
   const successModal = document.getElementById('successModal');
   const closeModal = successModal.querySelector('.close');
 
-  // Funciones de error/éxito
-  function showError(input, message) {
-    const parent = input.closest('.footer-form-group');
-    const error = parent.querySelector('.error-message');
-    parent.classList.add('error');
-    parent.classList.remove('success');
-    error.textContent = message;
-  }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^[0-9+\-\s]*$/;
 
-  function clearError(input) {
-    const parent = input.closest('.footer-form-group');
-    parent.classList.remove('error');
-    const error = parent.querySelector('.error-message');
-    if (error) error.textContent = '';
+  // -----------------------------
+  // FUNCIONES DE VALIDACIÓN
+  // -----------------------------
+  const validators = {
+    text: value => value.length > 0,
+    email: value => emailRegex.test(value),
+    tel: value => phoneRegex.test(value)
+  };
+
+  function showError(input, message) {
+    const group = input.closest('.footer-form-group');
+    group.classList.add('error');
+    group.classList.remove('success');
+    group.querySelector('.error-message').textContent = message;
   }
 
   function showSuccess(input) {
-    const parent = input.closest('.footer-form-group');
-    parent.classList.add('success');
-    parent.classList.remove('error');
-    const error = parent.querySelector('.error-message');
-    if (error) error.textContent = '';
+    const group = input.closest('.footer-form-group');
+    group.classList.add('success');
+    group.classList.remove('error');
+    group.querySelector('.error-message').textContent = "";
   }
 
-  // Input visual
+  function validateInput(input) {
+    const value = input.value.trim();
+
+    if (!value) {
+      showError(input, "Campo obligatorio");
+      return false;
+    }
+
+    const type = input.type;
+    if (validators[type] && !validators[type](value)) {
+      showError(input, `Formato de ${type} inválido`);
+      return false;
+    }
+
+    showSuccess(input);
+    return true;
+  }
+
+  // -----------------------------
+  // EFECTO VISUAL LABELS
+  // -----------------------------
   inputs.forEach(input => {
     input.addEventListener('input', () => {
-      if (input.value.trim() !== '') {
-        input.classList.add('filled');
-      } else {
-        input.classList.remove('filled');
-      }
-      clearError(input);
+      input.classList.toggle('filled', input.value.trim() !== "");
+      input.closest('.footer-form-group').classList.remove('error');
+      input.closest('.footer-form-group').querySelector('.error-message').textContent = "";
     });
   });
 
-  // Modal
-  function openModal() {
-    successModal.classList.add('active');
-  }
-
-  function closeModalFunc() {
-    successModal.classList.remove('active');
-  }
+  // -----------------------------
+  // MODALES
+  // -----------------------------
+  function openModal() { successModal.classList.add('active'); }
+  function closeModalFunc() { successModal.classList.remove('active'); }
 
   closeModal.addEventListener('click', closeModalFunc);
-  successModal.addEventListener('click', (e) => {
+  successModal.addEventListener('click', e => {
     if (e.target === successModal) closeModalFunc();
   });
 
-  // Envío del formulario
-  form.addEventListener('submit', (e) => {
-    e.preventDefault(); // Siempre prevenimos para controlar con fetch
-    let isValid = true;
+  // -----------------------------
+  // ENVÍO DEL FORMULARIO
+  // -----------------------------
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
 
-    // Validación campos
-    inputs.forEach(input => {
-      const value = input.value.trim();
-      if (!value) {
-        showError(input, 'Campo obligatorio');
-        isValid = false;
-      } else if (input.type === 'email' && !emailRegex.test(value)) {
-        showError(input, 'Formato de email inválido');
-        isValid = false;
-      } else if (input.type === 'tel' && !phoneRegex.test(value)) {
-        showError(input, 'Número de teléfono inválido');
-        isValid = false;
-      } else {
-        showSuccess(input);
-      }
-    });
+    let valid = true;
+    inputs.forEach(input => { if (!validateInput(input)) valid = false; });
+    if (!valid) return;
 
-    // Validación checkboxes
-    const privacy = document.getElementById('privacy');
-    const terms = document.getElementById('terms');
-    if (!privacy.checked || !terms.checked) {
-      alert('Debes aceptar las políticas de privacidad y los términos y condiciones.');
-      isValid = false;
-    }
-
-    if (!isValid) return;
-
-    // Enviar con fetch a FormSubmit
     const formData = new FormData(form);
-    fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(response => {
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      // Si FormSubmit responde OK → perfecto.
       if (response.ok) {
         openModal();
         form.reset();
         inputs.forEach(i => i.classList.remove('filled'));
       } else {
-        alert('Error al enviar el formulario. Intente nuevamente.');
+        // Fallback automático: enviar con submit real
+        form.submit();
       }
-    })
-    .catch(err => {
-      alert('Error de conexión al enviar el formulario: ' + err);
-    });
+
+    } catch (error) {
+      // Si fetch falla por CORS, red, etc → fallback
+      form.submit();
+    }
   });
 });
+
